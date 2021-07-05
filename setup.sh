@@ -21,6 +21,10 @@ if [[ $? != 0 ]] ; then
     brew install shellcheck
 fi
 
+if [[ ! -d /Applications/iTerm.app ]]; then
+    brew cask install iterm2
+fi
+
 declare xcode_status
 xcode_status=$(xcode-select --version)
 if ! [[ -x "$(command -v "xcode-select --version")" ]]; then
