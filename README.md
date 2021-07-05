@@ -11,3 +11,4 @@
 
 * After that, run the setup script:
 ```./setup.sh```
+* It only installs packages when they are not present. You can run the script anytime, it should not generate errors. 
