@@ -10,7 +10,7 @@
 * You can list your currently installed extensions with:
 ```code --list-extensions```
 * To copy your current settings from VScode: 
-```cd vscode_setup && cp "${HOME}/Library/Application Support/Code/User/settings.json" settings.json```
+```cd vscode_setup/config && cp "${HOME}/Library/Application Support/Code/User/settings.json" settings.json```
 
 * After that, run the setup script:
 ```./setup.sh```

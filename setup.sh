@@ -85,7 +85,7 @@ done
 declare CODE_CONFIG_LOC="${HOME}/Library/Application Support/Code/User/settings.json"
 
 if [ ! -f "${CODE_CONFIG_LOC}" ]; then
-    cp settings.json "${CODE_CONFIG_LOC}"
+    cd "${DIR}/config" && cp settings.json "${CODE_CONFIG_LOC}"
 fi
 
 printf "Done, please restart vscode.\n"
