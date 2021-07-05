@@ -21,6 +21,15 @@ if [[ $? != 0 ]] ; then
     brew install shellcheck
 fi
 
+declare xcode_status
+xcode_status=$(xcode-select --version)
+if ! [[ -x "$(command -v "xcode-select --version")" ]]; then
+    printf "Xcode is installed.\n" 
+else
+    xcode-select --install
+    osascript -e 'tell application "System Events"' -e 'tell process "Install Command Line Developer Tools"' -e 'keystroke return' -e 'click button "Agree" of window "License Agreement"' -e 'end tell' -e 'end tell'
+fi
+
 declare -a extensions=(
     "4ops.terraform"
     "BernardXiong.env-vscode"
