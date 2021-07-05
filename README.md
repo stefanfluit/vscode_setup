@@ -15,3 +15,4 @@
 * After that, run the setup script:
 ```./setup.sh```
 * It only installs packages when they are not present. You can run the script anytime, it should not generate errors. 
+* This script also tries to make ZSH your default shell. Disable that in the script if you don't like it, or copy your own config if you have one. Don't forget to disable the sed command in the script in the ZSH function.
