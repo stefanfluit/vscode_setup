@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# Finding the directory we're in
+declare DIR
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
 # Check if Homebrew is installed
 which -s brew
 if [[ $? != 0 ]] ; then
@@ -13,6 +17,11 @@ if [[ $? != 0 ]] ; then
     brew install --cask visual-studio-code
 fi
 
+which -s git
+if [[ $? != 0 ]] ; then
+    brew install git
+fi
+
 which -s ShellCheck
 if [[ $? != 0 ]] ; then
     brew install shellcheck
@@ -21,6 +30,13 @@ fi
 which -s zsh
 if [[ $? != 0 ]] ; then
     brew install zsh
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+    git clone https://github.com/bhilburn/powerlevel9k.git "${HOME}/.oh-my-zsh/custom/themes/powerlevel9k"
+    cp "${DIR}/config/.zshrc" "${HOME}/.zshrc" && sed -i "s/empty-user/$(whoami)/g" "${HOME}/.zshrc"
+    chsh -s "$(which zsh)" "$(whoami)"
+    # Install the fonts needed
+    cd /tmp/ && git clone https://github.com/powerline/fonts.git && cd /tmp/fonts && ./install.sh
+    defaults write com.googlecode.iterm2 "Normal Font" -string "Anonymous Pro for Powerline"
 fi
 
 if [[ ! -d /Applications/iTerm.app ]]; then
