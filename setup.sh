@@ -25,8 +25,6 @@ if [[ ! -d /Applications/iTerm.app ]]; then
     brew cask install iterm2
 fi
 
-declare xcode_status
-xcode_status=$(xcode-select --version)
 if ! [[ -x "$(command -v "xcode-select --version")" ]]; then
     printf "Xcode is installed.\n" 
 else
