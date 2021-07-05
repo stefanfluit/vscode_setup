@@ -3,7 +3,6 @@
 # Check if Homebrew is installed
 which -s brew
 if [[ $? != 0 ]] ; then
-    # Install Homebrew
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 else
     brew update
@@ -11,14 +10,17 @@ fi
 
 which -s code
 if [[ $? != 0 ]] ; then
-    # Install Code
     brew install --cask visual-studio-code
 fi
 
 which -s ShellCheck
 if [[ $? != 0 ]] ; then
-    # Install ShellCheck
     brew install shellcheck
+fi
+
+which -s zsh
+if [[ $? != 0 ]] ; then
+    brew install zsh
 fi
 
 if [[ ! -d /Applications/iTerm.app ]]; then
