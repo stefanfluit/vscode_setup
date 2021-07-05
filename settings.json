@@ -1,0 +1,7 @@
+{
+    "workbench.iconTheme": "eq-material-theme-icons-darker",
+    "redhat.telemetry.enabled": true,
+    "workbench.colorTheme": "Eva Dark",
+    "terminal.integrated.fontFamily": "Anonymous Pro for Powerline",
+    "files.autoSave": "onFocusChange"
+}
