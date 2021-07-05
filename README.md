@@ -1,10 +1,7 @@
 ### VScode setup script ###
 
 * VScode install script that checks if VScode is installed, copies settings.json and installs extensions.
-
 * Now also installs and configures ZSH, oh-my-zsh, Powerlevel9k, fonts, xcode, etc..
-
-=======
 * Works only for MacOS.
 
 ### How do I get set up? ###
