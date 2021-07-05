@@ -9,6 +9,8 @@
 * fork the repo, edit the array and the settings.json file to match your setup.
 * You can list your currently installed extensions with:
 ```code --list-extensions```
+* To copy your current settings from VScode: 
+```cd vscode_setup && cp "${HOME}/Library/Application Support/Code/User/settings.json" settings.json```
 
 * After that, run the setup script:
 ```./setup.sh```
